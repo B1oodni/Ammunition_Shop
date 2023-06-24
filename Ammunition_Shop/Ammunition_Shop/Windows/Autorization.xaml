@@ -1,0 +1,24 @@
+﻿<Window x:Class="Ammunition_Shop.Windows.Autorization"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ammunition_Shop.Windows"
+        mc:Ignorable="d"
+        Title="Autorization" Height="960" Width="974">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="/Ammunition_Shop;component/Image/BGA.png" Stretch="None"/>
+        </Grid.Background>
+        <Rectangle Fill="#E4E4E4" HorizontalAlignment="Left" Height="543" Margin="221,210,0,0" VerticalAlignment="Top" Width="531"/>
+        <TextBox x:Name="textBoxEmailAu" HorizontalAlignment="Left" Height="36" Margin="299,429,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="378" FontSize="22"/>
+        <Label Content="E-mail" HorizontalAlignment="Left" Margin="299,371,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <Label Content="Пароль" HorizontalAlignment="Left" Margin="299,498,0,0" VerticalAlignment="Top" FontSize="36"/>
+        <Label Content="Вход" HorizontalAlignment="Left" Margin="412,227,0,0" VerticalAlignment="Top" FontSize="64"/>
+        <PasswordBox x:Name="passwordBox" HorizontalAlignment="Left" Margin="299,556,0,0" VerticalAlignment="Top" Width="378" Height="30" FontSize="22"/>
+        <Button x:Name="buttonAutorization" Content="Войти" HorizontalAlignment="Left" Margin="422,642,0,0" VerticalAlignment="Top" Width="133" FontSize="36" Height="69" Click="buttonAutorization_Click"/>
+        <Button Content="Зарегистрироваться" HorizontalAlignment="Left" Margin="459,719,0,0" VerticalAlignment="Top" Width="131" Height="23" Click="Button_Click"/>
+        <Label Content="Или" HorizontalAlignment="Left" Margin="418,718,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>
