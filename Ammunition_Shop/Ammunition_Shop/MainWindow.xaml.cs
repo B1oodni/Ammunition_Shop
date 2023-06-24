@@ -1,4 +1,5 @@
 ﻿using Ammunition_Shop.Windows;
+using Ammunition_Shop.Classes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,10 +22,39 @@ namespace Ammunition_Shop
     /// </summary>
     public partial class MainWindow : Window
     {
+        private Classes.AppContext db;
+
         public MainWindow()
         {
             InitializeComponent();
+            db = new Classes.AppContext();
         }
+
+        private void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            // Создание экземпляра контекста базы данных
+            db = new Classes.AppContext();
+
+            // Загрузка информации из базы данных и установка значений в текстовые поля
+            LoadProductInfo();
+        }
+
+        private void LoadProductInfo()
+        {
+            // Выполнение запроса к базе данных для получения продукта с ID_Product = 1
+            Product product = db.Products.FirstOrDefault(p => p.ID_Product == 1);
+
+            if (product != null)
+            {
+                string formattedPrice = string.Format("{0:C}", product.Price);
+                // Установка значений в текстовые поля
+                textBoxPrice.Text = formattedPrice;
+                textBoxTitle.Text = product.Title;
+
+                textBoxPrice.IsReadOnly = true;
+                textBoxTitle.IsReadOnly = true;
+            }
+        }   
 
         private void RegistrationButton_Click(object sender, RoutedEventArgs e)
         {
@@ -36,6 +66,16 @@ namespace Ammunition_Shop
         {
             Autorization autw = new Autorization();
             autw.Show();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void FixedButton_Click(object sender, RoutedEventArgs e)
+        {
+            RegistrationButton.Focus();
         }
     }
 }

@@ -20,8 +20,6 @@ namespace Ammunition_Shop.Windows
     /// </summary>
     public partial class Autorization : Window
     {
-        public static string CurrentUserEmail { get; private set; }
-
         public Autorization()
         {
             InitializeComponent();

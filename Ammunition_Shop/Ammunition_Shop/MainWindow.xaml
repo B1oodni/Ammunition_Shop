@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ammunition_Shop"
         mc:Ignorable="d"
-        Title="MainWindow" Height="3776.5" Width="1807" Foreground="{x:Null}">
+        Title="MainWindow" Height="3776.5" Width="1807" Foreground="{x:Null}" Loaded="MainWindow_Loaded">
     <ScrollViewer>
         <Grid>
             <Grid.Background>
@@ -39,7 +39,27 @@
             </Label>
             <Label Content="Ammunition" HorizontalAlignment="Left" Margin="913,42,0,0" VerticalAlignment="Top" Width="840" Height="156" FontSize="130" FontFamily="Segoe UI Black" Foreground="#FF550303"/>
             <Label Content="SHOP" HorizontalAlignment="Left" Margin="1205,165,0,0" VerticalAlignment="Top" Width="267" Height="110" FontSize="90" FontFamily="Segoe UI Black" Foreground="#FF550303"/>
-            
+            <Button x:Name="CartButton" Content="Корзина" HorizontalAlignment="Left" Margin="508,81,0,0" VerticalAlignment="Top" Width="200" Height="71" FontSize="36" Click="Button_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="9"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
+
+            <Button x:Name="FixedButton" Content="^" Canvas.Left="0" Canvas.Top="0" HorizontalAlignment="Left" Margin="1727,3210,0,0" VerticalAlignment="Top" Width="45" Height="44" FontSize="36" Click="FixedButton_Click"/>
+            <Rectangle Fill="#FFE4E4E4" HorizontalAlignment="Left" Height="527" Margin="34,297,0,0" VerticalAlignment="Top" Width="370">
+
+            </Rectangle>
+            <Rectangle x:Name="ImageP" HorizontalAlignment="Left" Height="307" Margin="62,317,0,0" VerticalAlignment="Top" Width="320">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="Image/none.jpg"/>
+                </Rectangle.Fill>
+            </Rectangle>
+            <TextBox x:Name="textBoxPrice" HorizontalAlignment="Left" Height="34" Margin="62,679,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" BorderBrush="{x:Null}" Background="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24"/>
+            <TextBox x:Name="textBoxTitle" HorizontalAlignment="Left" Height="38" Margin="62,636,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontSize="24" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+
 
         </Grid>
     </ScrollViewer>
