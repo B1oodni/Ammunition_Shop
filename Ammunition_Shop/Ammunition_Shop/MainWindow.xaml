@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Ammunition_Shop"
         xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Ammunition_Shop.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="3776.5" Width="1910" Foreground="{x:Null}" Loaded="MainWindow_Loaded">
+        Title="MainWindow" Closing="MainWindow_Closing" Height="3776.5" Width="1910" Foreground="{x:Null}" Loaded="MainWindow_Loaded">
     <ScrollViewer>
         <Grid>
             <Grid.Background>
@@ -116,7 +116,7 @@
                 </Button>
 
             </ComboBox>
-            <Button x:Name="buttonBuyKyrtky" Content="Купить&#xA;" HorizontalAlignment="Left" Margin="167,756,0,0" VerticalAlignment="Top" Width="134" Height="58" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="#FFBBBBBB">
+            <Button x:Name="buttonBuyKyrtky" Content="Купить&#xA;" HorizontalAlignment="Left" Margin="167,756,0,0" VerticalAlignment="Top" Width="134" Height="58" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="#FFBBBBBB" Click="buttonBuyKyrtky_Click">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="9"/>
@@ -148,7 +148,7 @@
             </Rectangle>
             <TextBox x:Name="textBoxPrice_Copy" HorizontalAlignment="Left" Height="34" Margin="545,718,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" BorderBrush="{x:Null}" Background="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" FontFamily="Lato"/>
             <TextBox x:Name="textBoxTitle_Copy" HorizontalAlignment="Left" Height="78" Margin="545,640,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontSize="30" HorizontalContentAlignment="Center" FontFamily="Lato Semibold"/>
-            <Button x:Name="buttonBuyKyrtky_Copy" Content="Купить&#xA;" HorizontalAlignment="Left" Margin="635,756,0,0" VerticalAlignment="Top" Width="134" Height="58" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="#FFBBBBBB">
+            <Button x:Name="buttonBuyKyrtky_Copy" Content="Купить&#xA;" HorizontalAlignment="Left" Margin="635,756,0,0" VerticalAlignment="Top" Width="134" Height="58" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="#FFBBBBBB" Click="buttonBuyKyrtky_Copy_Click">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="9"/>
@@ -176,7 +176,7 @@
             </Rectangle>
             <TextBox x:Name="textBoxPrice_Copy1" HorizontalAlignment="Left" Height="34" Margin="1009,718,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" BorderBrush="{x:Null}" Background="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" FontFamily="Lato"/>
             <TextBox x:Name="textBoxTitle_Copy1" HorizontalAlignment="Left" Height="78" Margin="1009,640,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontSize="30" HorizontalContentAlignment="Center" FontFamily="Lato Semibold"/>
-            <Button x:Name="buttonBuyKyrtky_Copy1" Content="Купить&#xA;" HorizontalAlignment="Left" Margin="1099,756,0,0" VerticalAlignment="Top" Width="134" Height="58" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="#FFBBBBBB">
+            <Button x:Name="buttonBuyKyrtky_Copy1" Content="Купить&#xA;" HorizontalAlignment="Left" Margin="1099,756,0,0" VerticalAlignment="Top" Width="134" Height="58" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="#FFBBBBBB" Click="buttonBuyKyrtky_Copy1_Click">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="9"/>
@@ -204,7 +204,7 @@
             </Rectangle>
             <TextBox x:Name="textBoxPrice_Copy2" HorizontalAlignment="Left" Height="34" Margin="1472,718,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" BorderBrush="{x:Null}" Background="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" FontFamily="Lato"/>
             <TextBox x:Name="textBoxTitle_Copy2" HorizontalAlignment="Left" Height="78" Margin="1472,640,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontSize="30" HorizontalContentAlignment="Center" FontFamily="Lato Semibold"/>
-            <Button x:Name="buttonBuyKyrtky_Copy2" Content="Купить&#xA;" HorizontalAlignment="Left" Margin="1562,756,0,0" VerticalAlignment="Top" Width="134" Height="58" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="#FFBBBBBB">
+            <Button x:Name="buttonBuyKyrtky_Copy2" Content="Купить&#xA;" HorizontalAlignment="Left" Margin="1562,756,0,0" VerticalAlignment="Top" Width="134" Height="58" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="#FFBBBBBB" Click="buttonBuyKyrtky_Copy2_Click">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="9"/>
@@ -232,7 +232,7 @@
             </Rectangle>
             <TextBox x:Name="textBoxPrice_Copy3" HorizontalAlignment="Left" Height="34" Margin="77,1340,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" BorderBrush="{x:Null}" Background="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" FontFamily="Lato"/>
             <TextBox x:Name="textBoxTitle_Copy3" HorizontalAlignment="Left" Height="78" Margin="77,1262,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontSize="30" FontFamily="Lato Semibold" HorizontalContentAlignment="Center"/>
-            <Button x:Name="buttonBuyBotinki" Content="Купить&#xA;" HorizontalAlignment="Left" Margin="167,1378,0,0" VerticalAlignment="Top" Width="134" Height="58" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="#FFBBBBBB">
+            <Button x:Name="buttonBuyBotinki" Content="Купить&#xA;" HorizontalAlignment="Left" Margin="167,1378,0,0" VerticalAlignment="Top" Width="134" Height="58" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="#FFBBBBBB" Click="buttonBuyBotinki_Click">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="9"/>
@@ -260,7 +260,7 @@
             </Rectangle>
             <TextBox x:Name="textBoxPrice_Copy4" HorizontalAlignment="Left" Height="34" Margin="545,1340,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" BorderBrush="{x:Null}" Background="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" FontFamily="Lato"/>
             <TextBox x:Name="textBoxTitle_Copy4" HorizontalAlignment="Left" Height="78" Margin="545,1262,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontSize="30" HorizontalContentAlignment="Center" FontFamily="Lato Semibold"/>
-            <Button x:Name="buttonBuyBotinki_Copy" Content="Купить&#xA;" HorizontalAlignment="Left" Margin="635,1378,0,0" VerticalAlignment="Top" Width="134" Height="58" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="#FFBBBBBB">
+            <Button x:Name="buttonBuyBotinki_Copy" Content="Купить&#xA;" HorizontalAlignment="Left" Margin="635,1378,0,0" VerticalAlignment="Top" Width="134" Height="58" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="#FFBBBBBB" Click="buttonBuyBotinki_Copy_Click">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="9"/>
@@ -288,7 +288,7 @@
             </Rectangle>
             <TextBox x:Name="textBoxPrice_Copy5" HorizontalAlignment="Left" Height="34" Margin="1009,1340,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" BorderBrush="{x:Null}" Background="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" FontFamily="Lato"/>
             <TextBox x:Name="textBoxTitle_Copy5" HorizontalAlignment="Left" Height="78" Margin="1009,1262,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontSize="30" HorizontalContentAlignment="Center" FontFamily="Lato Semibold"/>
-            <Button x:Name="buttonBuyBotinki_Copy1" Content="Купить&#xA;" HorizontalAlignment="Left" Margin="1099,1378,0,0" VerticalAlignment="Top" Width="134" Height="58" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="#FFBBBBBB">
+            <Button x:Name="buttonBuyBotinki_Copy1" Content="Купить&#xA;" HorizontalAlignment="Left" Margin="1099,1378,0,0" VerticalAlignment="Top" Width="134" Height="58" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="#FFBBBBBB" Click="buttonBuyBotinki_Copy1_Click">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="9"/>
@@ -316,7 +316,7 @@
             </Rectangle>
             <TextBox x:Name="textBoxPrice_Copy6" HorizontalAlignment="Left" Height="34" Margin="1472,1340,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" BorderBrush="{x:Null}" Background="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" FontFamily="Lato"/>
             <TextBox x:Name="textBoxTitle_Copy6" HorizontalAlignment="Left" Height="78" Margin="1472,1262,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontSize="30" HorizontalContentAlignment="Center" FontFamily="Lato Semibold"/>
-            <Button x:Name="buttonBuyBotinki_Copy2" Content="Купить&#xA;" HorizontalAlignment="Left" Margin="1562,1378,0,0" VerticalAlignment="Top" Width="134" Height="58" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="#FFBBBBBB">
+            <Button x:Name="buttonBuyBotinki_Copy2" Content="Купить&#xA;" HorizontalAlignment="Left" Margin="1562,1378,0,0" VerticalAlignment="Top" Width="134" Height="58" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="#FFBBBBBB" Click="buttonBuyBotinki_Copy2_Click">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="9"/>
@@ -358,7 +358,7 @@
             </Rectangle>
             <TextBox x:Name="textBoxPrice_Copy7" HorizontalAlignment="Left" Height="34" Margin="77,1958,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" BorderBrush="{x:Null}" Background="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" FontFamily="Lato"/>
             <TextBox x:Name="textBoxTitle_Copy7" HorizontalAlignment="Left" Height="78" Margin="77,1880,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontSize="30" FontFamily="Lato Semibold" HorizontalContentAlignment="Center"/>
-            <Button x:Name="buttonBuyRyukzakSumka" Content="Купить&#xA;" HorizontalAlignment="Left" Margin="167,1996,0,0" VerticalAlignment="Top" Width="134" Height="58" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="#FFBBBBBB">
+            <Button x:Name="buttonBuyRyukzakSumka" Content="Купить&#xA;" HorizontalAlignment="Left" Margin="167,1996,0,0" VerticalAlignment="Top" Width="134" Height="58" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="#FFBBBBBB" Click="buttonBuyRyukzakSumka_Click">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="9"/>
@@ -386,7 +386,7 @@
             </Rectangle>
             <TextBox x:Name="textBoxPrice_Copy8" HorizontalAlignment="Left" Height="34" Margin="545,1958,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" BorderBrush="{x:Null}" Background="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" FontFamily="Lato"/>
             <TextBox x:Name="textBoxTitle_Copy8" HorizontalAlignment="Left" Height="78" Margin="545,1880,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontSize="30" HorizontalContentAlignment="Center" FontFamily="Lato Semibold"/>
-            <Button x:Name="buttonBuyRyukzakSumka_Copy" Content="Купить&#xA;" HorizontalAlignment="Left" Margin="635,1996,0,0" VerticalAlignment="Top" Width="134" Height="58" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="#FFBBBBBB">
+            <Button x:Name="buttonBuyRyukzakSumka_Copy" Content="Купить&#xA;" HorizontalAlignment="Left" Margin="635,1996,0,0" VerticalAlignment="Top" Width="134" Height="58" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="#FFBBBBBB" Click="buttonBuyRyukzakSumka_Copy_Click">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="9"/>
@@ -414,7 +414,7 @@
             </Rectangle>
             <TextBox x:Name="textBoxPrice_Copy9" HorizontalAlignment="Left" Height="34" Margin="1009,1958,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" BorderBrush="{x:Null}" Background="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" FontFamily="Lato"/>
             <TextBox x:Name="textBoxTitle_Copy9" HorizontalAlignment="Left" Height="78" Margin="1009,1880,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontSize="30" HorizontalContentAlignment="Center" FontFamily="Lato Semibold"/>
-            <Button x:Name="buttonBuyRyukzakSumka_Copy1" Content="Купить&#xA;" HorizontalAlignment="Left" Margin="1099,1996,0,0" VerticalAlignment="Top" Width="134" Height="58" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="#FFBBBBBB">
+            <Button x:Name="buttonBuyRyukzakSumka_Copy1" Content="Купить&#xA;" HorizontalAlignment="Left" Margin="1099,1996,0,0" VerticalAlignment="Top" Width="134" Height="58" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="#FFBBBBBB" Click="buttonBuyRyukzakSumka_Copy1_Click">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="9"/>
@@ -442,7 +442,7 @@
             </Rectangle>
             <TextBox x:Name="textBoxPrice_Copy10" HorizontalAlignment="Left" Height="34" Margin="1472,1958,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" BorderBrush="{x:Null}" Background="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" FontFamily="Lato"/>
             <TextBox x:Name="textBoxTitle_Copy10" HorizontalAlignment="Left" Height="78" Margin="1472,1880,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontSize="30" HorizontalContentAlignment="Center" FontFamily="Lato Semibold"/>
-            <Button x:Name="buttonBuyRyukzakSumka_Copy2" Content="Купить&#xA;" HorizontalAlignment="Left" Margin="1562,1996,0,0" VerticalAlignment="Top" Width="134" Height="58" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="#FFBBBBBB">
+            <Button x:Name="buttonBuyRyukzakSumka_Copy2" Content="Купить&#xA;" HorizontalAlignment="Left" Margin="1562,1996,0,0" VerticalAlignment="Top" Width="134" Height="58" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="#FFBBBBBB" Click="buttonBuyRyukzakSumka_Copy2_Click">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
                         <Setter Property="CornerRadius" Value="9"/>
@@ -477,6 +477,7 @@
             <Button x:Name="bONAS" Content="Button" HorizontalAlignment="Left" Margin="916,2591,0,0" VerticalAlignment="Top" Width="75" Height="7" Background="{x:Null}" BorderBrush="{x:Null}"/>
             <Button x:Name="bGdeNahod" Content="Button" HorizontalAlignment="Left" Margin="916,3223,0,0" VerticalAlignment="Top" Width="75" Height="7" Background="{x:Null}" BorderBrush="{x:Null}"/>
             <Button x:Name="bKontakti" Content="Button" HorizontalAlignment="Left" Margin="916,3500,0,0" VerticalAlignment="Top" Width="75" Height="7" Background="{x:Null}" BorderBrush="{x:Null}"/>
+            <TextBox x:Name="messageTextBox" HorizontalAlignment="Left" Height="34" Margin="483,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="958" FontSize="22" FontFamily="Segoe UI Black" HorizontalContentAlignment="Center" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"/>
 
 
 

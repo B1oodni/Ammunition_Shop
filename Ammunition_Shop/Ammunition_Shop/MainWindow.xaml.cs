@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
+using System.IO;
 
 namespace Ammunition_Shop
 {
@@ -24,10 +26,30 @@ namespace Ammunition_Shop
     {
         private Classes.AppContext db;
 
+        private DispatcherTimer timer;
+        private List<string> messages;
+        private int currentIndex;
+
         public MainWindow()
         {
             InitializeComponent();
             db = new Classes.AppContext();
+
+            messages = new List<string>
+            {
+                "У нас самые лучшие товары!",
+                "С нами безопасность, гарантия, точность!",
+                "Не проходите мимо!",
+                "Только по одному экземпляру."
+                // Добавьте здесь нужные сообщения
+            };
+
+            // Инициализация таймера
+            timer = new DispatcherTimer();
+            timer.Interval = TimeSpan.FromSeconds(10);
+            timer.Tick += Timer_Tick;
+
+            cartWindow = new Cart();
         }
 
         private void MainWindow_Loaded(object sender, RoutedEventArgs e)
@@ -37,8 +59,35 @@ namespace Ammunition_Shop
 
             // Загрузка информации из базы данных и установка значений в текстовые поля
             LoadProductInfo();
+            StartTimer();
         }
 
+        private void StartTimer()
+        {
+            timer.Start();
+        }
+
+        private void StopTimer()
+        {
+            timer.Stop();
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            // Обновление текста в TextBox
+            if (currentIndex < messages.Count)
+            {
+                messageTextBox.Text = messages[currentIndex];
+                messageTextBox.IsReadOnly = true;
+                currentIndex++;
+            }
+            else
+            {
+                StopTimer(); // Остановка таймера, когда все сообщения пройдены
+            }
+        }
+
+        #region Товары из каталога
         private void LoadProductInfo()
         {
             // Выполнение запроса к базе данных для получения продукта с ID_Product = 1
@@ -198,6 +247,7 @@ namespace Ammunition_Shop
                 textBoxTitle_Copy10.IsReadOnly = true;
             }
         }
+        #endregion
 
         private void TextBlockVK_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
@@ -219,9 +269,11 @@ namespace Ammunition_Shop
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-
+            Cart cart = new Cart();
+            cart.Show();
         }
 
+        #region К определённому элементу
         private void FixedButton_Click(object sender, RoutedEventArgs e)
         {
             RegistrationButton.Focus();
@@ -253,9 +305,150 @@ namespace Ammunition_Shop
 
         }
 
+        private Cart cartWindow;
+
         private void KatKontakti_Click(object sender, RoutedEventArgs e)
         {
-            bKontakti.Focus();
+            
+        }
+        #endregion
+
+        private const string DataFilePath = "data.txt";
+
+
+        private void buttonBuyKyrtky_Click(object sender, RoutedEventArgs e)
+        {
+            //string data = textBoxTitle.Text;
+            string text = textBoxTitle.Text;
+            string price = textBoxPrice.Text;
+
+            File.AppendAllText(DataFilePath, "-----------------");
+            File.AppendAllText(DataFilePath, $"\n{text}, {price}\n");
+
+
+
+            // Открытие второго окна
+            Cart cart = new Cart();
+        }
+
+        private void MainWindow_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            // Удалить файл, если он существует
+            if (File.Exists(DataFilePath))
+            {
+                File.Delete(DataFilePath);
+            }
+        }
+
+        private void buttonBuyKyrtky_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            string text = textBoxTitle_Copy.Text;
+            string price = textBoxPrice_Copy.Text;
+
+            File.AppendAllText(DataFilePath, "-----------------");
+            File.AppendAllText(DataFilePath, $"\n{text}, {price}\n");
+
+            Cart cart = new Cart();
+        }
+
+        private void buttonBuyKyrtky_Copy1_Click(object sender, RoutedEventArgs e)
+        {
+            string text = textBoxTitle_Copy1.Text;
+            string price = textBoxPrice_Copy1.Text;
+
+            File.AppendAllText(DataFilePath, "-----------------");
+            File.AppendAllText(DataFilePath, $"\n{text}, {price}\n");
+
+        }
+
+        private void buttonBuyKyrtky_Copy2_Click(object sender, RoutedEventArgs e)
+        {
+            string text = textBoxTitle_Copy2.Text;
+            string price = textBoxPrice_Copy2.Text;
+
+            File.AppendAllText(DataFilePath, "-----------------");
+            File.AppendAllText(DataFilePath, $"\n{text}, {price}\n");
+
+        }
+
+        private void buttonBuyBotinki_Click(object sender, RoutedEventArgs e)
+        {
+            string text = textBoxTitle_Copy3.Text;
+            string price = textBoxPrice_Copy3.Text;
+
+            File.AppendAllText(DataFilePath, "-----------------");
+            File.AppendAllText(DataFilePath, $"\n{text}, {price}\n");
+
+        }
+
+        private void buttonBuyBotinki_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            string text = textBoxTitle_Copy4.Text;
+            string price = textBoxPrice_Copy4.Text;
+
+            File.AppendAllText(DataFilePath, "-----------------");
+            File.AppendAllText(DataFilePath, $"\n{text}, {price}\n");
+
+        }
+
+        private void buttonBuyBotinki_Copy1_Click(object sender, RoutedEventArgs e)
+        {
+            string text = textBoxTitle_Copy5.Text;
+            string price = textBoxPrice_Copy5.Text;
+
+            File.AppendAllText(DataFilePath, "-----------------");
+            File.AppendAllText(DataFilePath, $"\n{text}, {price}\n");
+
+        }
+
+        private void buttonBuyBotinki_Copy2_Click(object sender, RoutedEventArgs e)
+        {
+            string text = textBoxTitle_Copy6.Text;
+            string price = textBoxPrice_Copy6.Text;
+
+            File.AppendAllText(DataFilePath, "-----------------");
+            File.AppendAllText(DataFilePath, $"\n{text}, {price}\n");
+
+        }
+
+        private void buttonBuyRyukzakSumka_Click(object sender, RoutedEventArgs e)
+        {
+            string text = textBoxTitle_Copy7.Text;
+            string price = textBoxPrice_Copy7.Text;
+
+            File.AppendAllText(DataFilePath, "-----------------");
+            File.AppendAllText(DataFilePath, $"\n{text}, {price}\n");
+
+        }
+
+        private void buttonBuyRyukzakSumka_Copy_Click(object sender, RoutedEventArgs e)
+        {
+            string text = textBoxTitle_Copy8.Text;
+            string price = textBoxPrice_Copy8.Text;
+
+            File.AppendAllText(DataFilePath, "-----------------");
+            File.AppendAllText(DataFilePath, $"\n{text}, {price}\n");
+
+        }
+
+        private void buttonBuyRyukzakSumka_Copy1_Click(object sender, RoutedEventArgs e)
+        {
+            string text = textBoxTitle_Copy9.Text;
+            string price = textBoxPrice_Copy9.Text;
+
+            File.AppendAllText(DataFilePath, "-----------------");
+            File.AppendAllText(DataFilePath, $"\n{text}, {price}\n");
+
+        }
+
+        private void buttonBuyRyukzakSumka_Copy2_Click(object sender, RoutedEventArgs e)
+        {
+            string text = textBoxTitle_Copy10.Text;
+            string price = textBoxPrice_Copy10.Text;
+
+            File.AppendAllText(DataFilePath, "-----------------");
+            File.AppendAllText(DataFilePath, $"\n{text}, {price}\n");
+
         }
     }
 }
