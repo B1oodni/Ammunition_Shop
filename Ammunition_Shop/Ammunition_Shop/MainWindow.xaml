@@ -26,20 +26,20 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            <Label x:Name="Contacts" Content="Контакты" HorizontalAlignment="Left" Margin="806,3331,0,0" VerticalAlignment="Top" FontSize="64" Width="307" Height="89" FontFamily="Segoe UI Semibold"/>
+            <Label x:Name="labelKontakti" Content="Контакты" HorizontalAlignment="Left" Margin="774,3321,0,0" VerticalAlignment="Top" FontSize="72" Width="355" Height="89" FontFamily="Microsoft YaHei"/>
             <Label Content="CopyRight: Бобров" HorizontalAlignment="Left" Margin="10,3709,0,0" VerticalAlignment="Top" FontSize="18"/>
             <Label Content="Ammunition" HorizontalAlignment="Left" Margin="916,12,0,0" VerticalAlignment="Top" Width="938" Height="177" FontSize="150" FontFamily="Segoe UI Black" Background="{x:Null}">
                 <Label.Foreground>
-                    <SolidColorBrush Color="Black" Opacity="0.5"/>
+                    <SolidColorBrush Color="Black" Opacity="0.6"/>
                 </Label.Foreground>
             </Label>
             <Label Content="SHOP" HorizontalAlignment="Left" Margin="1258,149,0,0" VerticalAlignment="Top" Width="290" Height="125" FontSize="100" FontFamily="Segoe UI Black">
                 <Label.Foreground>
-                    <SolidColorBrush Color="Black" Opacity="0.5"/>
+                    <SolidColorBrush Color="Black" Opacity="0.6"/>
                 </Label.Foreground>
             </Label>
-            <Label Content="Ammunition" HorizontalAlignment="Left" Margin="980,31,0,0" VerticalAlignment="Top" Width="840" Height="156" FontSize="130" FontFamily="Segoe UI Black" Foreground="#FF550303"/>
-            <Label Content="SHOP" HorizontalAlignment="Left" Margin="1272,154,0,0" VerticalAlignment="Top" Width="268" Height="110" FontSize="90" FontFamily="Segoe UI Black" Foreground="#FF550303"/>
+            <Label Content="Ammunition" HorizontalAlignment="Left" Margin="980,31,0,0" VerticalAlignment="Top" Width="840" Height="156" FontSize="130" FontFamily="Segoe UI Black" Foreground="#FF700505"/>
+            <Label Content="SHOP" HorizontalAlignment="Left" Margin="1272,154,0,0" VerticalAlignment="Top" Width="268" Height="110" FontSize="90" FontFamily="Segoe UI Black" Foreground="#FF700505"/>
             <Button x:Name="CartButton" Content="Корзина" HorizontalAlignment="Left" Margin="508,81,0,0" VerticalAlignment="Top" Width="200" Height="71" FontSize="48" Click="Button_Click" BorderBrush="{x:Null}" VerticalContentAlignment="Top">
                 <Button.Resources>
                     <Style TargetType="{x:Type Border}">
@@ -70,16 +70,50 @@
             </Rectangle>
             <TextBox x:Name="textBoxPrice" HorizontalAlignment="Left" Height="34" Margin="77,718,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" BorderBrush="{x:Null}" Background="{x:Null}" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontSize="24" FontFamily="Lato"/>
             <TextBox x:Name="textBoxTitle" HorizontalAlignment="Left" Height="78" Margin="77,640,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="320" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontSize="30" FontFamily="Lato Semibold" HorizontalContentAlignment="Center"/>
-            <ComboBox x:Name="Katalog" SelectedIndex="0" HorizontalAlignment="Left" Margin="34,176,0,0" VerticalAlignment="Top" Width="146" Height="43" FontSize="28" BorderBrush="{x:Null}" HorizontalContentAlignment="Center">
-                <ComboBox.Background>
-                    <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
-                        <GradientStop Color="#FFF0F0F0" Offset="0"/>
-                        <GradientStop Color="#FFDDDDDD" Offset="1"/>
-                    </LinearGradientBrush>
-                </ComboBox.Background>
-                <TextBlock IsEnabled="False"><Run Text="Каталог"/></TextBlock>
-                <Button x:Name="KatKyrtki" Content="Куртки" Width="136" BorderBrush="#FFDDDDDD" Click="KatKyrtki_Click"/>
-                <Button x:Name="KatBotinki" Content="Ботинки" Width="136" BorderBrush="#FFDDDDDD" Click="KatBotinki_Click"/>
+            <ComboBox x:Name="Katalog" SelectedIndex="0" HorizontalAlignment="Left" Margin="34,176,0,0" VerticalAlignment="Top" Width="242" Height="43" FontSize="28" BorderBrush="{x:Null}" HorizontalContentAlignment="Center" Background="Black">
+                <TextBlock IsEnabled="False" Width="102"><Run Text="Каталог"/></TextBlock>
+                <Button x:Name="KatKyrtki" Content="Куртки" Width="232" BorderBrush="{x:Null}" Click="KatKyrtki_Click" Background="#FFDDDDDD">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="9"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="KatBotinki" Content="Ботинки" Width="232" BorderBrush="{x:Null}" Click="KatBotinki_Click">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="9"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="KatRS" Content="Рюкзаки и Сумки" BorderBrush="{x:Null}" Width="232" Click="KatRS_Click">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="9"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="KatOnas" Content="О НАС" Width="232" BorderBrush="{x:Null}" Click="KatOnas_Click">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="9"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="KatGdeNahod" Content="Где находимся" Width="232" BorderBrush="{x:Null}" Click="KatGdeNahod_Click">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="9"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
+                <Button x:Name="KatKontakti" Content="Контакты" Width="232" BorderBrush="{x:Null}" Click="KatKontakti_Click">
+                    <Button.Resources>
+                        <Style TargetType="{x:Type Border}">
+                            <Setter Property="CornerRadius" Value="9"/>
+                        </Style>
+                    </Button.Resources>
+                </Button>
 
             </ComboBox>
             <Button x:Name="buttonBuyKyrtky" Content="Купить&#xA;" HorizontalAlignment="Left" Margin="167,756,0,0" VerticalAlignment="Top" Width="134" Height="58" FontSize="36" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" BorderBrush="{x:Null}" Background="#FFBBBBBB">
@@ -289,10 +323,10 @@
                     </Style>
                 </Button.Resources>
             </Button>
-            <TextBlock x:Name="textBlockVK" MouseLeftButtonUp="TextBlockVK_MouseLeftButtonUp" Cursor="Hand" HorizontalAlignment="Left" Margin="674,3420,0,0" TextWrapping="Wrap" Text="Бобров Игнат" VerticalAlignment="Top" Height="86" Width="559" Foreground="Black" FontSize="72" FontFamily="Arial Black">
+            <TextBlock x:Name="textBlockVK" MouseLeftButtonUp="TextBlockVK_MouseLeftButtonUp" Cursor="Hand" HorizontalAlignment="Left" Margin="762,3431,0,0" TextWrapping="Wrap" Text="Бобров Игнат" VerticalAlignment="Top" Height="64" Width="417" Foreground="Black" FontSize="52" FontFamily="Arial Black">
 
             </TextBlock>
-            <Rectangle HorizontalAlignment="Left" Height="114" Margin="566,3404,0,0" VerticalAlignment="Top" Width="113">
+            <Rectangle HorizontalAlignment="Left" Height="85" Margin="682,3419,0,0" VerticalAlignment="Top" Width="84">
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="Image/Vk.png"/>
                 </Rectangle.Fill>
@@ -415,6 +449,34 @@
                     </Style>
                 </Button.Resources>
             </Button>
+            <Label x:Name="labelGdeNahoditsa" Content="Где находимся" HorizontalAlignment="Left" Margin="688,2694,0,0" VerticalAlignment="Top" Height="102" Width="531" FontSize="72" FontFamily="Microsoft YaHei"/>
+            <Rectangle HorizontalAlignment="Left" Height="418" Margin="77,2805,0,0" VerticalAlignment="Top" Width="1737">
+                <Rectangle.Fill>
+                    <ImageBrush ImageSource="Image/mao.png"/>
+                </Rectangle.Fill>
+                <Rectangle.RadiusY>
+                    <System:Double>18</System:Double>
+                </Rectangle.RadiusY>
+                <Rectangle.RadiusX>
+                    <System:Double>18</System:Double>
+                </Rectangle.RadiusX>
+            </Rectangle>
+            <Button x:Name="FixedButton_Copy" Content="^" HorizontalAlignment="Left" Margin="1817,2736,0,0" VerticalAlignment="Top" Width="45" Height="44" FontSize="36" Click="FixedButton_Click"/>
+            <Label x:Name="labelONas" Content="О НАС" HorizontalAlignment="Left" Margin="828,2232,0,0" VerticalAlignment="Top" Height="102" Width="250" FontSize="72" FontFamily="Microsoft YaHei"/>
+            <Label Content="Мы одни из самых лучших, мы продаём только оригинал,&#xD;&#xA; никаких подделок. &#xD;&#xA;Товары надлежащего качества, не хуже чем в самой армии.&#xD;&#xA;С нами  вы будете в безопасности.&#xD;&#xA;" HorizontalAlignment="Left" Margin="275,2334,0,0" VerticalAlignment="Top" Height="257" Width="1353" FontSize="48" FontFamily="Book Antiqua" HorizontalContentAlignment="Center">
+                <Label.Background>
+                    <SolidColorBrush Color="White" Opacity="0.5"/>
+                </Label.Background>
+                <Label.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="15"/>
+                    </Style>
+                </Label.Resources>
+            </Label>
+            <Button x:Name="FixedButton_Copy1" Content="^" HorizontalAlignment="Left" Margin="1817,2264,0,0" VerticalAlignment="Top" Width="45" Height="44" FontSize="36" Click="FixedButton_Click"/>
+            <Button x:Name="bONAS" Content="Button" HorizontalAlignment="Left" Margin="916,2591,0,0" VerticalAlignment="Top" Width="75" Height="7" Background="{x:Null}" BorderBrush="{x:Null}"/>
+            <Button x:Name="bGdeNahod" Content="Button" HorizontalAlignment="Left" Margin="916,3223,0,0" VerticalAlignment="Top" Width="75" Height="7" Background="{x:Null}" BorderBrush="{x:Null}"/>
+            <Button x:Name="bKontakti" Content="Button" HorizontalAlignment="Left" Margin="916,3500,0,0" VerticalAlignment="Top" Width="75" Height="7" Background="{x:Null}" BorderBrush="{x:Null}"/>
 
 
 

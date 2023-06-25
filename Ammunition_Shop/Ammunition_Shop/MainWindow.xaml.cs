@@ -236,5 +236,26 @@ namespace Ammunition_Shop
         {
             buttonBuyBotinki.Focus();
         }
+
+        private void KatRS_Click(object sender, RoutedEventArgs e)
+        {
+            buttonBuyRyukzakSumka.Focus();
+        }
+
+        private void KatOnas_Click(object sender, RoutedEventArgs e)
+        {
+            bONAS.Focus();
+        }
+
+        private void KatGdeNahod_Click(object sender, RoutedEventArgs e)
+        {
+            bGdeNahod.Focus();
+
+        }
+
+        private void KatKontakti_Click(object sender, RoutedEventArgs e)
+        {
+            bKontakti.Focus();
+        }
     }
 }
