@@ -478,6 +478,13 @@
             <Button x:Name="bGdeNahod" Content="Button" HorizontalAlignment="Left" Margin="916,3223,0,0" VerticalAlignment="Top" Width="75" Height="7" Background="{x:Null}" BorderBrush="{x:Null}"/>
             <Button x:Name="bKontakti" Content="Button" HorizontalAlignment="Left" Margin="916,3500,0,0" VerticalAlignment="Top" Width="75" Height="7" Background="{x:Null}" BorderBrush="{x:Null}"/>
             <TextBox x:Name="messageTextBox" HorizontalAlignment="Left" Height="34" Margin="483,31,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="958" FontSize="22" FontFamily="Segoe UI Black" HorizontalContentAlignment="Center" Background="{x:Null}" Foreground="White" BorderBrush="{x:Null}" SelectionBrush="{x:Null}"/>
+            <Button x:Name="adminButton" Content="Администрация" HorizontalAlignment="Left" Margin="309,176,0,0" VerticalAlignment="Top" Width="372" Height="71" FontSize="48" BorderBrush="{x:Null}" Click="adminButton_Click">
+                <Button.Resources>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="CornerRadius" Value="9"/>
+                    </Style>
+                </Button.Resources>
+            </Button>
 
 
 

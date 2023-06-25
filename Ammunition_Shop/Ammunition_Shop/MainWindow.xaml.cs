@@ -450,5 +450,11 @@ namespace Ammunition_Shop
             File.AppendAllText(DataFilePath, $"\n{text}, {price}\n");
 
         }
+
+        private void adminButton_Click(object sender, RoutedEventArgs e)
+        {
+            Admins ad = new Admins();
+            ad.Show();
+        }
     }
 }
