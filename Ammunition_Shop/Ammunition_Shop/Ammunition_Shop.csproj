@@ -172,6 +172,21 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="Image\1Alpha_Blue.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Image\2Alpha_Black_and_Yelow.png" />
+    <Resource Include="Image\3Alpha_Gray.png" />
+    <Resource Include="Image\4Alpha_Gray_Yellow.png" />
+    <Resource Include="Image\1Boti.png" />
+    <Resource Include="Image\2Boti.png" />
+    <Resource Include="Image\3Boti.png" />
+    <Resource Include="Image\4Boti.png" />
+    <Resource Include="Image\Vk.png" />
+    <Resource Include="Image\1RS.png" />
+    <Resource Include="Image\2RS.png" />
+    <Resource Include="Image\3RS.png" />
+    <Resource Include="Image\4RS.png" />
     <Content Include="Models\Model1.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>Model1.Context.cs</LastGenOutput>
