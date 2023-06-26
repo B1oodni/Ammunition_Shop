@@ -32,14 +32,8 @@ F:\K0JIJI9IrA\3Kyrs\PraktikaRSPO\Project_RSPO\Ammunition_Shop\Ammunition_Shop\bi
 F:\K0JIJI9IrA\3Kyrs\PraktikaRSPO\Project_RSPO\Ammunition_Shop\Ammunition_Shop\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
 F:\K0JIJI9IrA\3Kyrs\PraktikaRSPO\Project_RSPO\Ammunition_Shop\Ammunition_Shop\bin\Debug\Xceed.Document.NET.dll
 F:\K0JIJI9IrA\3Kyrs\PraktikaRSPO\Project_RSPO\Ammunition_Shop\Ammunition_Shop\bin\Debug\Xceed.Words.NET.dll
-F:\K0JIJI9IrA\3Kyrs\PraktikaRSPO\Project_RSPO\Ammunition_Shop\Ammunition_Shop\bin\Debug\Models\Ammunition_Shop.Context.tt
-F:\K0JIJI9IrA\3Kyrs\PraktikaRSPO\Project_RSPO\Ammunition_Shop\Ammunition_Shop\bin\Debug\Models\Ammunition_Shop.tt
 F:\K0JIJI9IrA\3Kyrs\PraktikaRSPO\Project_RSPO\Ammunition_Shop\Ammunition_Shop\bin\Debug\Models\Administrators.cs
-F:\K0JIJI9IrA\3Kyrs\PraktikaRSPO\Project_RSPO\Ammunition_Shop\Ammunition_Shop\bin\Debug\Models\Ammunition_Shop.Context.cs
-F:\K0JIJI9IrA\3Kyrs\PraktikaRSPO\Project_RSPO\Ammunition_Shop\Ammunition_Shop\bin\Debug\Models\Ammunition_Shop.cs
-F:\K0JIJI9IrA\3Kyrs\PraktikaRSPO\Project_RSPO\Ammunition_Shop\Ammunition_Shop\bin\Debug\Models\Ammunition_Shop.Designer.cs
 F:\K0JIJI9IrA\3Kyrs\PraktikaRSPO\Project_RSPO\Ammunition_Shop\Ammunition_Shop\bin\Debug\Models\Products.cs
-F:\K0JIJI9IrA\3Kyrs\PraktikaRSPO\Project_RSPO\Ammunition_Shop\Ammunition_Shop\bin\Debug\Models\Ammunition_Shop.edmx.diagram
 F:\K0JIJI9IrA\3Kyrs\PraktikaRSPO\Project_RSPO\Ammunition_Shop\Ammunition_Shop\obj\Debug\Windows\Admins.g.cs
 F:\K0JIJI9IrA\3Kyrs\PraktikaRSPO\Project_RSPO\Ammunition_Shop\Ammunition_Shop\obj\Debug\Windows\AdminWindow.g.cs
 F:\K0JIJI9IrA\3Kyrs\PraktikaRSPO\Project_RSPO\Ammunition_Shop\Ammunition_Shop\obj\Debug\Windows\Admins.baml

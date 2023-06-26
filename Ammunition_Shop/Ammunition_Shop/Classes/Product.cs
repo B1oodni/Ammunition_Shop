@@ -14,6 +14,7 @@ namespace Ammunition_Shop.Classes
         public int ID_Product { get; set; }
         private string imagePath, title;
         private decimal price;
+        public int ColvoProduct { get; set; }
 
         public string ImagePath
         {
@@ -33,11 +34,12 @@ namespace Ammunition_Shop.Classes
 
         public Product() { }
 
-        public Product(string imagePath, string title, decimal price)
+        public Product(string imagePath, string title, decimal price, int ColvoProduct)
         {
             this.imagePath = imagePath;
             this.title = title;
             this.price = price;
+            this.ColvoProduct = ColvoProduct;
         }
     }
 }

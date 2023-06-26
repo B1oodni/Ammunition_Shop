@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("models/ammunition_shop.context.tt")]
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("models/ammunition_shop.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("models/ammunition_shop1.context.tt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("models/ammunition_shop1.tt")]
 
 

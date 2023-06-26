@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:Ammunition_Shop"
         xmlns:System="clr-namespace:System;assembly=mscorlib" x:Class="Ammunition_Shop.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Closing="MainWindow_Closing" Height="896.5" Width="1910" Foreground="{x:Null}" Loaded="MainWindow_Loaded">
+        Title="MainWindow" Closing="MainWindow_Closing" Height="3766.5" Width="1910" Foreground="{x:Null}" Loaded="MainWindow_Loaded">
     <ScrollViewer>
         <Grid>
             <Grid.Background>
@@ -492,6 +492,30 @@
                     </Style>
                 </Button.Resources>
             </Button>
+            <TextBox x:Name="textBoxColP" HorizontalAlignment="Left" Height="34" Margin="65,784,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" FontSize="24" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center"/>
+            <Label Content="Количество:" HorizontalAlignment="Left" Margin="65,756,0,0" VerticalAlignment="Top" Width="97" FontSize="14" Height="33"/>
+            <TextBox x:Name="textBoxColP_Copy" HorizontalAlignment="Left" Height="34" Margin="533,784,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" FontSize="24" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center"/>
+            <Label Content="Количество:" HorizontalAlignment="Left" Margin="533,756,0,0" VerticalAlignment="Top" Width="97" FontSize="14" Height="33"/>
+            <TextBox x:Name="textBoxColP_Copy1" HorizontalAlignment="Left" Height="34" Margin="997,784,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" FontSize="24" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center"/>
+            <Label Content="Количество:" HorizontalAlignment="Left" Margin="997,756,0,0" VerticalAlignment="Top" Width="97" FontSize="14" Height="33"/>
+            <TextBox x:Name="textBoxColP_Copy2" HorizontalAlignment="Left" Height="34" Margin="1460,784,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" FontSize="24" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center"/>
+            <Label Content="Количество:" HorizontalAlignment="Left" Margin="1460,756,0,0" VerticalAlignment="Top" Width="97" FontSize="14" Height="33"/>
+            <TextBox x:Name="textBoxColP_Copy3" HorizontalAlignment="Left" Height="34" Margin="65,1410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" FontSize="24" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center"/>
+            <Label Content="Количество:" HorizontalAlignment="Left" Margin="65,1382,0,0" VerticalAlignment="Top" Width="97" FontSize="14" Height="33"/>
+            <TextBox x:Name="textBoxColP_Copy4" HorizontalAlignment="Left" Height="34" Margin="533,1410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" FontSize="24" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center"/>
+            <Label Content="Количество:" HorizontalAlignment="Left" Margin="533,1382,0,0" VerticalAlignment="Top" Width="97" FontSize="14" Height="33"/>
+            <TextBox x:Name="textBoxColP_Copy5" HorizontalAlignment="Left" Height="34" Margin="997,1410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" FontSize="24" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center"/>
+            <Label Content="Количество:" HorizontalAlignment="Left" Margin="997,1382,0,0" VerticalAlignment="Top" Width="97" FontSize="14" Height="33"/>
+            <TextBox x:Name="textBoxColP_Copy6" HorizontalAlignment="Left" Height="34" Margin="1460,1410,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" FontSize="24" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center"/>
+            <Label Content="Количество:" HorizontalAlignment="Left" Margin="1460,1382,0,0" VerticalAlignment="Top" Width="97" FontSize="14" Height="33"/>
+            <TextBox x:Name="textBoxColP_Copy7" HorizontalAlignment="Left" Height="34" Margin="65,2026,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" FontSize="24" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center"/>
+            <Label Content="Количество:" HorizontalAlignment="Left" Margin="65,1998,0,0" VerticalAlignment="Top" Width="97" FontSize="14" Height="33"/>
+            <TextBox x:Name="textBoxColP_Copy8" HorizontalAlignment="Left" Height="34" Margin="533,2026,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" FontSize="24" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center"/>
+            <Label Content="Количество:" HorizontalAlignment="Left" Margin="533,1998,0,0" VerticalAlignment="Top" Width="97" FontSize="14" Height="33"/>
+            <TextBox x:Name="textBoxColP_Copy9" HorizontalAlignment="Left" Height="34" Margin="997,2026,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" FontSize="24" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center"/>
+            <Label Content="Количество:" HorizontalAlignment="Left" Margin="997,1998,0,0" VerticalAlignment="Top" Width="97" FontSize="14" Height="33"/>
+            <TextBox x:Name="textBoxColP_Copy10" HorizontalAlignment="Left" Height="34" Margin="1460,2026,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85" FontSize="24" Background="{x:Null}" BorderBrush="{x:Null}" HorizontalContentAlignment="Center"/>
+            <Label Content="Количество:" HorizontalAlignment="Left" Margin="1460,1998,0,0" VerticalAlignment="Top" Width="97" FontSize="14" Height="33"/>
 
 
 

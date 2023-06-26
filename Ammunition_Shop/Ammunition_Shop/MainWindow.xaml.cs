@@ -119,6 +119,7 @@ namespace Ammunition_Shop
                 // Установка значений в текстовые поля
                 textBoxPrice.Text = formattedPrice;
                 textBoxTitle.Text = kyrtka.Title;
+                textBoxColP.Text = kyrtka.ColvoProduct.ToString();
 
                 textBoxPrice.IsReadOnly = true;
                 textBoxTitle.IsReadOnly = true;
@@ -132,6 +133,7 @@ namespace Ammunition_Shop
                 // Установка значений в текстовые поля
                 textBoxPrice_Copy.Text = formattedPrice;
                 textBoxTitle_Copy.Text = kyrtka2.Title;
+                textBoxColP_Copy.Text = kyrtka2.ColvoProduct.ToString();
 
                 textBoxPrice_Copy.IsReadOnly = true;
                 textBoxTitle_Copy.IsReadOnly = true;
@@ -145,6 +147,7 @@ namespace Ammunition_Shop
                 // Установка значений в текстовые поля
                 textBoxPrice_Copy1.Text = formattedPrice;
                 textBoxTitle_Copy1.Text = kyrtka3.Title;
+                textBoxColP_Copy1.Text = kyrtka3.ColvoProduct.ToString();
 
                 textBoxPrice_Copy1.IsReadOnly = true;
                 textBoxTitle_Copy1.IsReadOnly = true;
@@ -158,6 +161,7 @@ namespace Ammunition_Shop
                 // Установка значений в текстовые поля
                 textBoxPrice_Copy2.Text = formattedPrice;
                 textBoxTitle_Copy2.Text = kyrtka4.Title;
+                textBoxColP_Copy2.Text = kyrtka4.ColvoProduct.ToString();
 
                 textBoxPrice_Copy2.IsReadOnly = true;
                 textBoxTitle_Copy2.IsReadOnly = true;
@@ -171,6 +175,7 @@ namespace Ammunition_Shop
                 // Установка значений в текстовые поля
                 textBoxPrice_Copy3.Text = formattedPrice;
                 textBoxTitle_Copy3.Text = boti.Title;
+                textBoxColP_Copy3.Text = boti.ColvoProduct.ToString();
 
                 textBoxPrice_Copy3.IsReadOnly = true;
                 textBoxTitle_Copy3.IsReadOnly = true;
@@ -184,6 +189,7 @@ namespace Ammunition_Shop
                 // Установка значений в текстовые поля
                 textBoxPrice_Copy4.Text = formattedPrice;
                 textBoxTitle_Copy4.Text = boti2.Title;
+                textBoxColP_Copy4.Text = boti2.ColvoProduct.ToString();
 
                 textBoxPrice_Copy4.IsReadOnly = true;
                 textBoxTitle_Copy4.IsReadOnly = true;
@@ -197,6 +203,7 @@ namespace Ammunition_Shop
                 // Установка значений в текстовые поля
                 textBoxPrice_Copy5.Text = formattedPrice;
                 textBoxTitle_Copy5.Text = boti3.Title;
+                textBoxColP_Copy5.Text = boti3.ColvoProduct.ToString();
 
                 textBoxPrice_Copy5.IsReadOnly = true;
                 textBoxTitle_Copy5.IsReadOnly = true;
@@ -210,6 +217,7 @@ namespace Ammunition_Shop
                 // Установка значений в текстовые поля
                 textBoxPrice_Copy6.Text = formattedPrice;
                 textBoxTitle_Copy6.Text = boti4.Title;
+                textBoxColP_Copy6.Text = boti4.ColvoProduct.ToString();
 
                 textBoxPrice_Copy6.IsReadOnly = true;
                 textBoxTitle_Copy6.IsReadOnly = true;
@@ -223,6 +231,7 @@ namespace Ammunition_Shop
                 // Установка значений в текстовые поля
                 textBoxPrice_Copy7.Text = formattedPrice;
                 textBoxTitle_Copy7.Text = rs.Title;
+                textBoxColP_Copy7.Text = rs.ColvoProduct.ToString();
 
                 textBoxPrice_Copy7.IsReadOnly = true;
                 textBoxTitle_Copy7.IsReadOnly = true;
@@ -236,6 +245,7 @@ namespace Ammunition_Shop
                 // Установка значений в текстовые поля
                 textBoxPrice_Copy8.Text = formattedPrice;
                 textBoxTitle_Copy8.Text = rs2.Title;
+                textBoxColP_Copy8.Text = rs2.ColvoProduct.ToString();
 
                 textBoxPrice_Copy8.IsReadOnly = true;
                 textBoxTitle_Copy8.IsReadOnly = true;
@@ -249,6 +259,7 @@ namespace Ammunition_Shop
                 // Установка значений в текстовые поля
                 textBoxPrice_Copy9.Text = formattedPrice;
                 textBoxTitle_Copy9.Text = rs3.Title;
+                textBoxColP_Copy9.Text = rs3.ColvoProduct.ToString();
 
                 textBoxPrice_Copy9.IsReadOnly = true;
                 textBoxTitle_Copy9.IsReadOnly = true;
@@ -262,6 +273,7 @@ namespace Ammunition_Shop
                 // Установка значений в текстовые поля
                 textBoxPrice_Copy10.Text = formattedPrice;
                 textBoxTitle_Copy10.Text = rs4.Title;
+                textBoxColP_Copy10.Text = rs4.ColvoProduct.ToString();
 
                 textBoxPrice_Copy10.IsReadOnly = true;
                 textBoxTitle_Copy10.IsReadOnly = true;
@@ -345,7 +357,34 @@ namespace Ammunition_Shop
             File.AppendAllText(DataFilePath, "-----------------");
             File.AppendAllText(DataFilePath, $"\n{text}, {price}\n");
 
+            Button buyButton = (Button)sender;
+            int ID_Product = Convert.ToInt32(buyButton.Tag);
 
+            // Найдите товар в базе данных
+            Product product = db.Products.FirstOrDefault(p => p.ID_Product == 1);
+
+            if (product != null)
+            {
+                // Проверьте, что у товара есть доступное количество для покупки
+                if (product.ColvoProduct > 0)
+                {
+                    // Уменьшите количество товара на единицу
+                    product.ColvoProduct--;
+
+                    // Обновите текстовое поле с количеством товара
+                    textBoxColP.Text = product.ColvoProduct.ToString();
+
+                    // Сохраните изменения в базе данных
+                    db.SaveChanges();
+                }
+                else
+                {
+                    // Выведите сообщение о том, что товара больше нет в наличии
+                    MessageBox.Show("Извините, этот товар больше недоступен.");
+                }
+            }
+
+            buttonBuyKyrtky.Tag = 1;
 
             // Открытие второго окна
             Cart cart = new Cart();
@@ -369,6 +408,35 @@ namespace Ammunition_Shop
             File.AppendAllText(DataFilePath, $"\n{text}, {price}\n");
 
             Cart cart = new Cart();
+
+            Button buyButton = (Button)sender;
+            int ID_Product = Convert.ToInt32(buyButton.Tag);
+
+            // Найдите товар в базе данных
+            Product product = db.Products.FirstOrDefault(p => p.ID_Product == 2);
+
+            if (product != null)
+            {
+                // Проверьте, что у товара есть доступное количество для покупки
+                if (product.ColvoProduct > 0)
+                {
+                    // Уменьшите количество товара на единицу
+                    product.ColvoProduct--;
+
+                    // Обновите текстовое поле с количеством товара
+                    textBoxColP_Copy.Text = product.ColvoProduct.ToString();
+
+                    // Сохраните изменения в базе данных
+                    db.SaveChanges();
+                }
+                else
+                {
+                    // Выведите сообщение о том, что товара больше нет в наличии
+                    MessageBox.Show("Извините, этот товар больше недоступен.");
+                }
+            }
+
+            buttonBuyKyrtky_Copy.Tag = 1;
         }
 
         private void buttonBuyKyrtky_Copy1_Click(object sender, RoutedEventArgs e)
@@ -378,6 +446,35 @@ namespace Ammunition_Shop
 
             File.AppendAllText(DataFilePath, "-----------------");
             File.AppendAllText(DataFilePath, $"\n{text}, {price}\n");
+
+            Button buyButton = (Button)sender;
+            int ID_Product = Convert.ToInt32(buyButton.Tag);
+
+            // Найдите товар в базе данных
+            Product product = db.Products.FirstOrDefault(p => p.ID_Product == 3);
+
+            if (product != null)
+            {
+                // Проверьте, что у товара есть доступное количество для покупки
+                if (product.ColvoProduct > 0)
+                {
+                    // Уменьшите количество товара на единицу
+                    product.ColvoProduct--;
+
+                    // Обновите текстовое поле с количеством товара
+                    textBoxColP_Copy1.Text = product.ColvoProduct.ToString();
+
+                    // Сохраните изменения в базе данных
+                    db.SaveChanges();
+                }
+                else
+                {
+                    // Выведите сообщение о том, что товара больше нет в наличии
+                    MessageBox.Show("Извините, этот товар больше недоступен.");
+                }
+            }
+
+            buttonBuyKyrtky_Copy1.Tag = 1;
 
         }
 
@@ -389,6 +486,35 @@ namespace Ammunition_Shop
             File.AppendAllText(DataFilePath, "-----------------");
             File.AppendAllText(DataFilePath, $"\n{text}, {price}\n");
 
+            Button buyButton = (Button)sender;
+            int ID_Product = Convert.ToInt32(buyButton.Tag);
+
+            // Найдите товар в базе данных
+            Product product = db.Products.FirstOrDefault(p => p.ID_Product == 4);
+
+            if (product != null)
+            {
+                // Проверьте, что у товара есть доступное количество для покупки
+                if (product.ColvoProduct > 0)
+                {
+                    // Уменьшите количество товара на единицу
+                    product.ColvoProduct--;
+
+                    // Обновите текстовое поле с количеством товара
+                    textBoxColP_Copy2.Text = product.ColvoProduct.ToString();
+
+                    // Сохраните изменения в базе данных
+                    db.SaveChanges();
+                }
+                else
+                {
+                    // Выведите сообщение о том, что товара больше нет в наличии
+                    MessageBox.Show("Извините, этот товар больше недоступен.");
+                }
+            }
+
+            buttonBuyKyrtky_Copy2.Tag = 1;
+
         }
 
         private void buttonBuyBotinki_Click(object sender, RoutedEventArgs e)
@@ -398,6 +524,35 @@ namespace Ammunition_Shop
 
             File.AppendAllText(DataFilePath, "-----------------");
             File.AppendAllText(DataFilePath, $"\n{text}, {price}\n");
+
+            Button buyButton = (Button)sender;
+            int ID_Product = Convert.ToInt32(buyButton.Tag);
+
+            // Найдите товар в базе данных
+            Product product = db.Products.FirstOrDefault(p => p.ID_Product == 6);
+
+            if (product != null)
+            {
+                // Проверьте, что у товара есть доступное количество для покупки
+                if (product.ColvoProduct > 0)
+                {
+                    // Уменьшите количество товара на единицу
+                    product.ColvoProduct--;
+
+                    // Обновите текстовое поле с количеством товара
+                    textBoxColP_Copy3.Text = product.ColvoProduct.ToString();
+
+                    // Сохраните изменения в базе данных
+                    db.SaveChanges();
+                }
+                else
+                {
+                    // Выведите сообщение о том, что товара больше нет в наличии
+                    MessageBox.Show("Извините, этот товар больше недоступен.");
+                }
+            }
+
+            buttonBuyBotinki.Tag = 1;
 
         }
 
@@ -409,6 +564,35 @@ namespace Ammunition_Shop
             File.AppendAllText(DataFilePath, "-----------------");
             File.AppendAllText(DataFilePath, $"\n{text}, {price}\n");
 
+            Button buyButton = (Button)sender;
+            int ID_Product = Convert.ToInt32(buyButton.Tag);
+
+            // Найдите товар в базе данных
+            Product product = db.Products.FirstOrDefault(p => p.ID_Product == 7);
+
+            if (product != null)
+            {
+                // Проверьте, что у товара есть доступное количество для покупки
+                if (product.ColvoProduct > 0)
+                {
+                    // Уменьшите количество товара на единицу
+                    product.ColvoProduct--;
+
+                    // Обновите текстовое поле с количеством товара
+                    textBoxColP_Copy4.Text = product.ColvoProduct.ToString();
+
+                    // Сохраните изменения в базе данных
+                    db.SaveChanges();
+                }
+                else
+                {
+                    // Выведите сообщение о том, что товара больше нет в наличии
+                    MessageBox.Show("Извините, этот товар больше недоступен.");
+                }
+            }
+
+            buttonBuyBotinki_Copy.Tag = 1;
+
         }
 
         private void buttonBuyBotinki_Copy1_Click(object sender, RoutedEventArgs e)
@@ -418,6 +602,35 @@ namespace Ammunition_Shop
 
             File.AppendAllText(DataFilePath, "-----------------");
             File.AppendAllText(DataFilePath, $"\n{text}, {price}\n");
+
+            Button buyButton = (Button)sender;
+            int ID_Product = Convert.ToInt32(buyButton.Tag);
+
+            // Найдите товар в базе данных
+            Product product = db.Products.FirstOrDefault(p => p.ID_Product == 8);
+
+            if (product != null)
+            {
+                // Проверьте, что у товара есть доступное количество для покупки
+                if (product.ColvoProduct > 0)
+                {
+                    // Уменьшите количество товара на единицу
+                    product.ColvoProduct--;
+
+                    // Обновите текстовое поле с количеством товара
+                    textBoxColP_Copy5.Text = product.ColvoProduct.ToString();
+
+                    // Сохраните изменения в базе данных
+                    db.SaveChanges();
+                }
+                else
+                {
+                    // Выведите сообщение о том, что товара больше нет в наличии
+                    MessageBox.Show("Извините, этот товар больше недоступен.");
+                }
+            }
+
+            buttonBuyBotinki_Copy1.Tag = 1;
 
         }
 
@@ -429,6 +642,35 @@ namespace Ammunition_Shop
             File.AppendAllText(DataFilePath, "-----------------");
             File.AppendAllText(DataFilePath, $"\n{text}, {price}\n");
 
+            Button buyButton = (Button)sender;
+            int ID_Product = Convert.ToInt32(buyButton.Tag);
+
+            // Найдите товар в базе данных
+            Product product = db.Products.FirstOrDefault(p => p.ID_Product == 9);
+
+            if (product != null)
+            {
+                // Проверьте, что у товара есть доступное количество для покупки
+                if (product.ColvoProduct > 0)
+                {
+                    // Уменьшите количество товара на единицу
+                    product.ColvoProduct--;
+
+                    // Обновите текстовое поле с количеством товара
+                    textBoxColP_Copy6.Text = product.ColvoProduct.ToString();
+
+                    // Сохраните изменения в базе данных
+                    db.SaveChanges();
+                }
+                else
+                {
+                    // Выведите сообщение о том, что товара больше нет в наличии
+                    MessageBox.Show("Извините, этот товар больше недоступен.");
+                }
+            }
+
+            buttonBuyBotinki_Copy2.Tag = 1;
+
         }
 
         private void buttonBuyRyukzakSumka_Click(object sender, RoutedEventArgs e)
@@ -438,6 +680,35 @@ namespace Ammunition_Shop
 
             File.AppendAllText(DataFilePath, "-----------------");
             File.AppendAllText(DataFilePath, $"\n{text}, {price}\n");
+
+            Button buyButton = (Button)sender;
+            int ID_Product = Convert.ToInt32(buyButton.Tag);
+
+            // Найдите товар в базе данных
+            Product product = db.Products.FirstOrDefault(p => p.ID_Product == 11);
+
+            if (product != null)
+            {
+                // Проверьте, что у товара есть доступное количество для покупки
+                if (product.ColvoProduct > 0)
+                {
+                    // Уменьшите количество товара на единицу
+                    product.ColvoProduct--;
+
+                    // Обновите текстовое поле с количеством товара
+                    textBoxColP_Copy7.Text = product.ColvoProduct.ToString();
+
+                    // Сохраните изменения в базе данных
+                    db.SaveChanges();
+                }
+                else
+                {
+                    // Выведите сообщение о том, что товара больше нет в наличии
+                    MessageBox.Show("Извините, этот товар больше недоступен.");
+                }
+            }
+
+            buttonBuyRyukzakSumka.Tag = 1;
 
         }
 
@@ -449,6 +720,35 @@ namespace Ammunition_Shop
             File.AppendAllText(DataFilePath, "-----------------");
             File.AppendAllText(DataFilePath, $"\n{text}, {price}\n");
 
+            Button buyButton = (Button)sender;
+            int ID_Product = Convert.ToInt32(buyButton.Tag);
+
+            // Найдите товар в базе данных
+            Product product = db.Products.FirstOrDefault(p => p.ID_Product == 12);
+
+            if (product != null)
+            {
+                // Проверьте, что у товара есть доступное количество для покупки
+                if (product.ColvoProduct > 0)
+                {
+                    // Уменьшите количество товара на единицу
+                    product.ColvoProduct--;
+
+                    // Обновите текстовое поле с количеством товара
+                    textBoxColP_Copy8.Text = product.ColvoProduct.ToString();
+
+                    // Сохраните изменения в базе данных
+                    db.SaveChanges();
+                }
+                else
+                {
+                    // Выведите сообщение о том, что товара больше нет в наличии
+                    MessageBox.Show("Извините, этот товар больше недоступен.");
+                }
+            }
+
+            buttonBuyRyukzakSumka_Copy.Tag = 1;
+
         }
 
         private void buttonBuyRyukzakSumka_Copy1_Click(object sender, RoutedEventArgs e)
@@ -458,6 +758,35 @@ namespace Ammunition_Shop
 
             File.AppendAllText(DataFilePath, "-----------------");
             File.AppendAllText(DataFilePath, $"\n{text}, {price}\n");
+
+            Button buyButton = (Button)sender;
+            int ID_Product = Convert.ToInt32(buyButton.Tag);
+
+            // Найдите товар в базе данных
+            Product product = db.Products.FirstOrDefault(p => p.ID_Product == 13);
+
+            if (product != null)
+            {
+                // Проверьте, что у товара есть доступное количество для покупки
+                if (product.ColvoProduct > 0)
+                {
+                    // Уменьшите количество товара на единицу
+                    product.ColvoProduct--;
+
+                    // Обновите текстовое поле с количеством товара
+                    textBoxColP_Copy9.Text = product.ColvoProduct.ToString();
+
+                    // Сохраните изменения в базе данных
+                    db.SaveChanges();
+                }
+                else
+                {
+                    // Выведите сообщение о том, что товара больше нет в наличии
+                    MessageBox.Show("Извините, этот товар больше недоступен.");
+                }
+            }
+
+            buttonBuyRyukzakSumka_Copy1.Tag = 1;
 
         }
 
@@ -469,6 +798,35 @@ namespace Ammunition_Shop
             File.AppendAllText(DataFilePath, "-----------------");
             File.AppendAllText(DataFilePath, $"\n{text}, {price}\n");
 
+            Button buyButton = (Button)sender;
+            int ID_Product = Convert.ToInt32(buyButton.Tag);
+
+            // Найдите товар в базе данных
+            Product product = db.Products.FirstOrDefault(p => p.ID_Product == 14);
+
+            if (product != null)
+            {
+                // Проверьте, что у товара есть доступное количество для покупки
+                if (product.ColvoProduct > 0)
+                {
+                    // Уменьшите количество товара на единицу
+                    product.ColvoProduct--;
+
+                    // Обновите текстовое поле с количеством товара
+                    textBoxColP_Copy10.Text = product.ColvoProduct.ToString();
+
+                    // Сохраните изменения в базе данных
+                    db.SaveChanges();
+                }
+                else
+                {
+                    // Выведите сообщение о том, что товара больше нет в наличии
+                    MessageBox.Show("Извините, этот товар больше недоступен.");
+                }
+            }
+
+            buttonBuyRyukzakSumka_Copy2.Tag = 1;
+
         }
 
         private void adminButton_Click(object sender, RoutedEventArgs e)
@@ -479,17 +837,8 @@ namespace Ammunition_Shop
 
         private void buttonRyk_Click(object sender, RoutedEventArgs e)
         {
-            string documentPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Doc\\Руководство_Пользователя.docx");
-
-            // Копируем документ во временную папку
-            string tempPath = System.IO.Path.Combine(System.IO.Path.GetTempPath(), "Руководство_Пользователя.docx");
-            File.Copy(documentPath, tempPath, true);
-
-            // Делаем файл только для чтения
-            File.SetAttributes(tempPath, FileAttributes.ReadOnly);
-
-            // Открываем документ в Word
-            Process.Start("winword.exe", tempPath);
+            string pdfFilePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Doc", "help.pdf");
+            Process.Start(pdfFilePath);
         }
     }
 }

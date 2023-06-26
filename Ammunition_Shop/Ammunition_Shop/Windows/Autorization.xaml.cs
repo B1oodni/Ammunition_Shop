@@ -57,7 +57,6 @@ namespace Ammunition_Shop.Windows
 
                 if (authUser != null)
                 {
-                    MessageBox.Show("Вы успешно вошли");
                     MainWindow mainw = new MainWindow();
                     mainw.Show();
                     Close();

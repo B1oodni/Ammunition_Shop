@@ -93,33 +93,30 @@
     <Compile Include="Classes\Product.cs" />
     <Compile Include="Classes\User.cs" />
     <Compile Include="Models\Administrators.cs">
-      <DependentUpon>Ammunition_Shop.tt</DependentUpon>
+      <DependentUpon>Ammunition_Shop1.tt</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
-    <Compile Include="Models\Ammunition_Shop.Context.cs">
+    <Compile Include="Models\Ammunition_Shop1.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Ammunition_Shop.Context.tt</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>Ammunition_Shop1.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Ammunition_Shop.cs">
+    <Compile Include="Models\Ammunition_Shop1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Ammunition_Shop.tt</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>Ammunition_Shop1.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Ammunition_Shop.Designer.cs">
+    <Compile Include="Models\Ammunition_Shop1.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Ammunition_Shop.edmx</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>Ammunition_Shop1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Models\Products.cs">
-      <DependentUpon>Ammunition_Shop.tt</DependentUpon>
+      <DependentUpon>Ammunition_Shop1.tt</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Models\Users.cs">
-      <DependentUpon>Ammunition_Shop.tt</DependentUpon>
+      <DependentUpon>Ammunition_Shop1.tt</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Compile>
     <Compile Include="Windows\Admins.xaml.cs">
@@ -189,15 +186,13 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="App.Config" />
-    <EntityDeploy Include="Models\Ammunition_Shop.edmx">
+    <None Include="Doc\help.pdf" />
+    <EntityDeploy Include="Models\Ammunition_Shop1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Ammunition_Shop.Designer.cs</LastGenOutput>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <LastGenOutput>Ammunition_Shop1.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Doc\Руководство_Пользователя.docx" />
-    <None Include="Models\Ammunition_Shop.edmx.diagram">
-      <DependentUpon>Ammunition_Shop.edmx</DependentUpon>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Include="Models\Ammunition_Shop1.edmx.diagram">
+      <DependentUpon>Ammunition_Shop1.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -214,6 +209,16 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Models\Ammunition_Shop1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Ammunition_Shop1.edmx</DependentUpon>
+      <LastGenOutput>Ammunition_Shop1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Ammunition_Shop1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Ammunition_Shop1.edmx</DependentUpon>
+      <LastGenOutput>Ammunition_Shop1.cs</LastGenOutput>
+    </Content>
     <Resource Include="Image\1Alpha_Blue.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -230,18 +235,6 @@
     <Resource Include="Image\3RS.png" />
     <Resource Include="Image\4RS.png" />
     <Resource Include="Image\mao.png" />
-    <Content Include="Models\Ammunition_Shop.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Ammunition_Shop.edmx</DependentUpon>
-      <LastGenOutput>Ammunition_Shop.Context.cs</LastGenOutput>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Models\Ammunition_Shop.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Ammunition_Shop.edmx</DependentUpon>
-      <LastGenOutput>Ammunition_Shop.cs</LastGenOutput>
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Resource Include="none.jpg" />
     <Resource Include="Image\none.jpg">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

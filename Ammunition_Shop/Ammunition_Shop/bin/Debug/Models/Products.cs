@@ -18,5 +18,6 @@ namespace Ammunition_Shop.Models
         public string imagePath { get; set; }
         public string title { get; set; }
         public decimal price { get; set; }
+        public Nullable<int> ColvoProduct { get; set; }
     }
 }
