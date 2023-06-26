@@ -47,7 +47,7 @@ namespace Ammunition_Shop.Windows
         {
             decimal totalSum = 0;
             //GenerateReceipt();
-            using (DocX document = DocX.Create("Products.docx"))
+            using (DocX document = DocX.Create("Чек.docx"))
             {
                 // Чтение данных из файла
                 if (File.Exists(DataFilePath))
@@ -78,7 +78,7 @@ namespace Ammunition_Shop.Windows
                 document.Save();
             }
 
-            MessageBox.Show("Word-документ успешно создан!");
+            MessageBox.Show("Чек успешно создан!");
 
             // Открытие диалогового окна сохранения файла
             Microsoft.Win32.SaveFileDialog saveFileDialog = new Microsoft.Win32.SaveFileDialog();
@@ -87,7 +87,7 @@ namespace Ammunition_Shop.Windows
 
             if (saveFileDialog.ShowDialog() == true)
             {
-                File.Copy("Products.docx", saveFileDialog.FileName, true);
+                File.Copy("Чек.docx", saveFileDialog.FileName, true);
             }
         }
 

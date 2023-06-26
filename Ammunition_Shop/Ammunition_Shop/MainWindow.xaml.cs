@@ -16,6 +16,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Windows.Threading;
 using System.IO;
+using System.Diagnostics;
+using System.Reflection;
 
 namespace Ammunition_Shop
 {
@@ -40,7 +42,25 @@ namespace Ammunition_Shop
                 "У нас самые лучшие товары!",
                 "С нами безопасность, гарантия, точность!",
                 "Не проходите мимо!",
-                "Только по одному экземпляру."
+                "Только по одному экземпляру.",
+                "У нас самые лучшие товары!",
+                "С нами безопасность, гарантия, точность!",
+                "Не проходите мимо!",
+                "У нас самые лучшие товары!",
+                "С нами безопасность, гарантия, точность!",
+                "Не проходите мимо!",
+                "У нас самые лучшие товары!",
+                "С нами безопасность, гарантия, точность!",
+                "Не проходите мимо!",
+                "У нас самые лучшие товары!",
+                "С нами безопасность, гарантия, точность!",
+                "Не проходите мимо!",
+                "У нас самые лучшие товары!",
+                "С нами безопасность, гарантия, точность!",
+                "Не проходите мимо!",
+                "У нас самые лучшие товары!",
+                "С нами безопасность, гарантия, точность!",
+                "Не проходите мимо!"
                 // Добавьте здесь нужные сообщения
             };
 
@@ -455,6 +475,21 @@ namespace Ammunition_Shop
         {
             Admins ad = new Admins();
             ad.Show();
+        }
+
+        private void buttonRyk_Click(object sender, RoutedEventArgs e)
+        {
+            string documentPath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location), "Doc\\Руководство_Пользователя.docx");
+
+            // Копируем документ во временную папку
+            string tempPath = System.IO.Path.Combine(System.IO.Path.GetTempPath(), "Руководство_Пользователя.docx");
+            File.Copy(documentPath, tempPath, true);
+
+            // Делаем файл только для чтения
+            File.SetAttributes(tempPath, FileAttributes.ReadOnly);
+
+            // Открываем документ в Word
+            Process.Start("winword.exe", tempPath);
         }
     }
 }

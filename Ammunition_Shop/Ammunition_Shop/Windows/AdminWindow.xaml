@@ -5,13 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Ammunition_Shop.Windows"
         mc:Ignorable="d"
-        Title="AdminWindow" Height="435" Width="1031">
+        Title="AdminWindow" Height="777" Width="1031">
     <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="/Ammunition_Shop;component/Image/BGA.png" Stretch="None"/>
         </Grid.Background>
-        <Button Content="Пользователи" HorizontalAlignment="Left" Margin="32,40,0,0" VerticalAlignment="Top" Width="96" Height="40"/>
-        <Button Content="Товары" HorizontalAlignment="Left" Margin="180,40,0,0" VerticalAlignment="Top" Width="104" Height="40"/>
+        <Button Content="Пользователи" HorizontalAlignment="Left" Margin="45,57,0,0" VerticalAlignment="Top" Width="174" Height="54" FontSize="24" Click="Button_Click"/>
+        <Button x:Name="buttonTovar" Content="Товары" HorizontalAlignment="Left" Margin="242,57,0,0" VerticalAlignment="Top" Width="145" Height="54" FontSize="24" Click="buttonTovar_Click"/>
+        <DataGrid x:Name="dataGrid" HorizontalAlignment="Left" Height="477" Margin="28,203,0,0" VerticalAlignment="Top" Width="967" IsReadOnly="False"/>
+        <Button x:Name="SaveChanges" Content="Сохранить изменения" HorizontalAlignment="Left" Margin="28,685,0,0" VerticalAlignment="Top" Width="191" Height="51" FontSize="16" Click="SaveChanges_Click"/>
 
     </Grid>
 </Window>

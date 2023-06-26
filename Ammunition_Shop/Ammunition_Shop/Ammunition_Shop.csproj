@@ -194,6 +194,7 @@
       <LastGenOutput>Ammunition_Shop.Designer.cs</LastGenOutput>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EntityDeploy>
+    <None Include="Doc\Руководство_Пользователя.docx" />
     <None Include="Models\Ammunition_Shop.edmx.diagram">
       <DependentUpon>Ammunition_Shop.edmx</DependentUpon>
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -261,5 +262,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
